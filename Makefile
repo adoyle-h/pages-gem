@@ -7,6 +7,10 @@ image:
 	${DOCKER} build -t ${TAG} .
 image_alpine:
 	${DOCKER} build -t ${TAG} . -f Dockerfile.alpine
+image_alpine_cn:
+	${DOCKER} build -t ${TAG} . -f Dockerfile.alpine \
+		--build-arg 'APK_PROXY=mirrors.ustc.edu.cn' \
+		--build-arg 'GEM_PROXY=gems.ruby-china.com'
 
 # Produce a bash shell
 shell:
