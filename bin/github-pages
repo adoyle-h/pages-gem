@@ -57,6 +57,24 @@ Mercenary.program(:"github-pages") do |p|
     end
   end
 
+  p.command(:serve) do |c|
+    c.syntax "serve [options]"
+    c.description "Serve your site locally"
+
+    c.option 'verbose', '--verbose', 'Verbose logging'
+    c.option 'source', '--source DIR', 'From where to collect the source files'
+    c.option 'destination', '--destination DIR', 'To where the compiled files should be written'
+    c.option 'future', '--future', 'Publishes posts with a future date'
+    c.option 'watch', '--watch', 'Watch for changes and rebuild'
+    c.option 'incremental', '-I', 'Enable incremental rebuild'
+    c.option 'host', '-H HOST', 'Host to bind to'
+    c.option 'port', '-P PORT', 'Port to listen on'
+
+    c.action do |_, options|
+      Jekyll::Commands::Serve.start(options)
+    end
+  end
+
   p.command(:build) do |c|
     c.syntax "build [options]"
     c.description "Builds your Jekyll site"
@@ -65,6 +83,8 @@ Mercenary.program(:"github-pages") do |p|
     c.option 'source', '--source DIR', 'From where to collect the source files'
     c.option 'destination', '--destination DIR', 'To where the compiled files should be written'
     c.option 'future', '--future', 'Publishes posts with a future date'
+    c.option 'watch', '--watch', 'Watch for changes and rebuild'
+    c.option 'incremental', '-I', 'Enable incremental rebuild'
 
     c.action do |_, options|
       Jekyll::Commands::Build.process(options)
