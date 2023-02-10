@@ -24,10 +24,13 @@ RUN apk add --no-cache --virtual .build_deps \
   bundle install --gemfile=/src/gh/pages-gem/Gemfile && \
   apk del .build_deps
 
+RUN ln -f -s /src/gh/pages-gem/bin/github-pages /usr/local/bundle/bin/github-pages
+
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 WORKDIR /src/site
 
-CMD ["jekyll", "serve", "-H", "0.0.0.0", "-P", "4000"]
+ENTRYPOINT ["github-pages"]
+CMD ["serve", "-H", "0.0.0.0", "-P", "4000", "-I", "--watch", "--verbose"]
