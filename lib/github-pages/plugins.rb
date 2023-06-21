@@ -15,6 +15,7 @@ module GitHubPages
       jekyll-readme-index
       jekyll-default-layout
       jekyll-titles-from-headings
+      jekyll-autolink_email
     ).freeze
 
     # Plugins allowed by GitHub Pages
@@ -39,6 +40,8 @@ module GitHubPages
       jekyll-include-cache
       jekyll-octicons
       jekyll-remote-theme
+      jekyll-autolink_email
+      jekyll-last-modified-at
     ).freeze
 
     # Plugins only allowed locally
