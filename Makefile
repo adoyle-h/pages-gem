@@ -37,3 +37,7 @@ server:
 
 .PHONY:
 	image image_alpine server shell
+
+.PHONY: build
+build:
+	gem build ./github-pages.gemspec
