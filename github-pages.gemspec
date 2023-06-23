@@ -15,6 +15,10 @@ Gem::Specification.new do |s|
   s.email                 = "adoyle.h@gmail.com"
   s.homepage              = "https://github.com/adoyle-h/pages-gem"
   s.license               = "MIT"
+  s.metadata = {
+    "homepage_uri" => "https://github.com/adoyle-h/pages-gem",
+    "source_code_uri" => "https://github.com/adoyle-h/pages-gem"
+  }
 
   all_files               = `git ls-files -z`.split("\x0")
   s.files                 = all_files.grep(%r{^(bin|lib)/|^.rubocop.yml$})
