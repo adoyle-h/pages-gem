@@ -43,7 +43,7 @@ module GitHubPages
       "jekyll-titles-from-headings" => "0.5.3",
 
       # My Plugins
-      "jekyll-autolinks" => "0.2.2",
+      "jekyll-autolinks" => "0.2.3",
       "jekyll-last-modified-at" => "1.3.0"
     }.freeze
 
